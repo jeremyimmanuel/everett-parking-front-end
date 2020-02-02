@@ -34,7 +34,12 @@ A map is a crucial part in this app as it shows the locations of various places 
 Since the resource that we have is a static image of the availale parking spots/lots, we made our own database-backed server and manually input it with the relevant coordinates. For the purpose of this hackathon, we took account of only 6 places as a proof of concept. Details about our server side (back-end) can be viewed in the back-end repo attached above.
 
 ## Results
+[map homepage](map.PNG) 
+[loc1 homepage](locInfo1.PNG)
+[loc2 homepage](locInfo2.PNG)
+[desc box](desc.PNG)
 
+We managed to make an mvp case
 
 ## Getting Started
 
