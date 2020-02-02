@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import './home.dart';
+import './widgets/home.dart';
 import './models/polygonList.dart';
+import './utils/everettParkingTheme.dart';
 
 void main() => runApp(EverettParking());
 
+/// EveretParking
+///
+/// Main app widget
 class EverettParking extends StatefulWidget {
   @override
   _EverettParkingState createState() => _EverettParkingState();
@@ -20,10 +24,10 @@ class _EverettParkingState extends State<EverettParking> {
         ChangeNotifierProvider(create: (_) => PolygonList()),
       ],
       child: MaterialApp(
+        theme: everettParkingTheme(),
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Maps Sample App'),
-            backgroundColor: Colors.green[700],
+            title: Text('Everett Parking Map'),
           ),
           body: HomePage(),
         ),

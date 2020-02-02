@@ -11,6 +11,10 @@ class PolygonList with ChangeNotifier {
 
   List<Location> get poly => [..._poly];
 
+  Location getLoc(int id) {  
+    return _poly.firstWhere((l) => id == l.id);
+  }
+
   Future<void> getData() async {
     print('in get Data');
     final String url = 'http://172.21.27.142:5000/data/parkinglot';
@@ -35,6 +39,7 @@ class PolygonList with ChangeNotifier {
         type: location['type'],
         numSpots: location['num_spots'],
         id: location['id'],
+        timeRestriction: location['time_restriction']
         // polygonId: location['lot_name'],
       );
 

@@ -1,8 +1,9 @@
+import 'package:everett_parking/widgets/locationInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 
-import './models/polygonList.dart';
+import '../models/polygonList.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -61,6 +62,19 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  void _showInfo(BuildContext context, int id) {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) {
+        return GestureDetector(
+          onTap: () {},
+          child: LocationInfo(id),
+          behavior: HitTestBehavior.opaque,
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final pl = Provider.of<PolygonList>(context).poly;
@@ -68,9 +82,15 @@ class _HomePageState extends State<HomePage> {
     final polygons = pl.map((l) => Polygon(
           polygonId: PolygonId(l.id.toString()),
           points: l.coords,
-          fillColor: Colors.blue.withOpacity(0.1),
+          fillColor: l.colorLoc.withOpacity(0.1),
+          strokeWidth: 2,
+          strokeColor: Colors.grey[900],
+          onTap: () {
+            print('Tapped!');
+            _showInfo(context, l.id);
+            },
+          consumeTapEvents: true,
         ));
-
 
     // FIXME get rid of these print statements
     print('in homepage build');
@@ -84,7 +104,7 @@ class _HomePageState extends State<HomePage> {
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
               target: _center,
-              zoom: 14.1,
+              zoom: 14.5,
             ),
             cameraTargetBounds: CameraTargetBounds(
               LatLngBounds(
@@ -92,6 +112,7 @@ class _HomePageState extends State<HomePage> {
                   southwest: LatLng(47.969480, -122.220290)),
             ),
             polygons: polygons.toSet(),
+
           );
   }
 }
