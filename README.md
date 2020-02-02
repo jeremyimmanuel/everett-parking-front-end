@@ -4,7 +4,10 @@
 ## Team
 Jeremy Tandjung : https://github.com/jeremyimmanuel <br>
 Jun Zhen        : https://github.com/jpzhen <br>
-Krish Kalai     : https://github.com/krishkalai07
+Krish Kalai     : https://github.com/krishkalai07 <br>
+
+Also, check out our fourth member's repositories, who unfortunately couldn't come to the hackathon due to ilness.<br>
+Nathan Phan : https://github.com/irredentist
 
 ## Problem
 Residents and visitors find it difficult to find on street parking within the downtown area of Everett. Past parking utilization studies have shown there may be enough parking stalls in the downtown, but public perception is parking availability is a challenge.
@@ -30,16 +33,58 @@ For this hackathon, we set our goals to at least get an MVP, which has the follo
 ## Google Maps
 A map is a crucial part in this app as it shows the locations of various places in Everett __including__ the parking spaces/lots. Therefore, we decided to use Google Maps SDK as our map of choice.
 
+## Everett Parking API
+As we mentioned before, since the provided data is a static image, we made our own RESTful API to provide the app with meaningful data. Right now, the app only sends GET request; however, in a later section, we will discuss the future of the apps and potential improvement that involves using the API more heavily.
+
 ## Datapoints
 Since the resource that we have is a static image of the availale parking spots/lots, we made our own database-backed server and manually input it with the relevant coordinates. For the purpose of this hackathon, we took account of only 6 places as a proof of concept. Details about our server side (back-end) can be viewed in the back-end repo attached above.
 
-## Results
-[map homepage](map.PNG) 
-[loc1 homepage](locInfo1.PNG)
-[loc2 homepage](locInfo2.PNG)
-[desc box](desc.PNG)
+We managed to make an mvp that satisfy the goals mentioned above
 
-We managed to make an mvp case
+## Screenshots
+![home page](homepage.PNG) ![location info 1](locInfo1.PNG) ![location info 2](locInfo2.PNG) ![desc](desc.PNG)
+
+## Short Demo
+Click this [link](https://youtu.be/dDfc4tU8x98) to see a short demo showing you how the app works in real life.
+
+# Back-end
+## To be written...
+
+# Instructions
+## Back-end
+1. Check you ip address
+2. Run the server
+
+## Front-end
+1. Make sure you have the flutter SDK installed and have an internet connection
+2. Download this repo (front-end)
+3. Run `flutter pub get` in the root directory of this project
+4. For android you can play on a simulator or a real device by running 'Debug' or press f5
+5. For iOS simulator, you can do it like the previous step. However, the real iPhones, you have to get xcode.
+
+# Future 
+In the future we would like to implement the following features:
+1. User can see their current location
+2. User can pick a parking space and get directions from their current location to the desired parking space
+3. Dark mode
+4. User can check in to a parking space/lot
+5. Server will have more accurate data
+
+# Technology Used
+## Front-end
+1. Flutter
+2. Dart
+3. Google Cloud console
+4. Google Maps SDK
+
+## Back-end
+1. Python
+2. SQL
+3. JSON
+
+# Conclusion
+Overall we had an awesome time at the hackathon. Shout out to WSU Everett ACM and their sponsors for organizing this event! 
+
 
 ## Getting Started
 
