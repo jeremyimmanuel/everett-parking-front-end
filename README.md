@@ -2,8 +2,8 @@
 ## Coughacks 2020 Project
 
 ## Team
-Jeremy Tandjung : https://github.com/jeremyimmanuel
-Jun Zhen        : https://github.com/jpzhen
+Jeremy Tandjung : https://github.com/jeremyimmanuel <br>
+Jun Zhen        : https://github.com/jpzhen <br>
 Krish Kalai     : https://github.com/krishkalai07
 
 ## Problem
