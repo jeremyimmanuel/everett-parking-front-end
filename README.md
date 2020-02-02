@@ -19,7 +19,22 @@ Back-end:   https://github.com/jeremyimmanuel/everett-parking-back-end
 # Front End
 ## Two Platforms, One Codebase
 ![Flutter logo](https://flutter.dev/assets/flutter-lockup-c13da9c9303e26b8d5fc208d2a1fa20c1ef47eb021ecadf27046dea04c0cebf6.png)
-For this project, we have decided to adopt Google's Flutter SDK to develop our app. For those of you who don't know, Flutter is a cross platform mobile app development that lets you develop both android and iOS applications all in one code base, written in Dart. R
+For this project, we have decided to adopt Google's Flutter SDK to develop our app. For those of you who don't know, Flutter is a cross platform mobile app development that lets you develop both android and iOS applications all in one code base, written in Dart. You can visit the [official flutter website](https://flutter.dev) for more information.
+
+## Goal
+For this hackathon, we set our goals to at least get an MVP, which has the following requirements:
+* User is able to find parking spots/lots
+* User is able to see the capacity of each parking spots.
+* User is able to identify what kind of lot it is (private, or public, etc)
+
+## Google Maps
+A map is a crucial part in this app as it shows the locations of various places in Everett __including__ the parking spaces/lots. Therefore, we decided to use Google Maps SDK as our map of choice.
+
+## Datapoints
+Since the resource that we have is a static image of the availale parking spots/lots, we made our own database-backed server and manually input it with the relevant coordinates. For the purpose of this hackathon, we took account of only 6 places as a proof of concept. Details about our server side (back-end) can be viewed in the back-end repo attached above.
+
+## Results
+
 
 ## Getting Started
 
