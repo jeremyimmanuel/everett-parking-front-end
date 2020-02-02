@@ -11,6 +11,7 @@ class Location {
     this.numSpots,
     this.id,
     this.timeRestriction,
+    this.restrictions,
     // this.polygonId,
   });
 
@@ -30,11 +31,13 @@ class Location {
   // String representation of time restriction
   final String timeRestriction;
 
+  final int restrictions;
+
   // Get the String representation of the type of parking location
   String get typeString {
     int count = 0;
     while(count < 8){
-      if(type & (1 << count) == 0)
+      if(this.type & (1 << count) == 0)
         count++;
       else{
         switch (count) {
@@ -68,7 +71,7 @@ class Location {
 
   // Get color based on location type
   Color get colorLoc {
-    switch (typeString) {
+    switch (this.typeString) {
       case 'Private Lot':
         return Color.fromARGB(255, 235, 210, 148);
         break;
@@ -91,5 +94,16 @@ class Location {
         return Colors.black;
         break;
     }
+  }
+
+  List<bool> get restrictionBoolArr {
+    List<bool> retVal = [false, false, false, false, false, false, false, false];
+    for (var i = 0; i < 8; i++) {
+      print(restrictions);
+      if(restrictions & (1 << i) == 1)
+        retVal[i] = true;
+    }
+
+    return retVal;
   }
 }

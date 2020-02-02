@@ -8,6 +8,10 @@ ThemeData everettParkingTheme() {
     appBarTheme: AppBarTheme(
       color: Color.fromRGBO(27, 41, 79, 1),
     ),
+    iconTheme: IconThemeData(
+      color: Colors.white,
+      size: 10,
+    ),
     // buttonColor: Colors.grey[700],
     // buttonTheme: ButtonThemeData(buttonColor: Colors.grey[700]),
     // textTheme: base.textTheme.copyWith(

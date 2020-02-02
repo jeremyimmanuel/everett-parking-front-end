@@ -15,7 +15,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   GoogleMapController mapController;
 
-  // var _isInit = true;
   var _isLoading = true;
 
   final LatLng _center = const LatLng(47.980802, -122.213511);
@@ -34,32 +33,6 @@ class _HomePageState extends State<HomePage> {
       });
     });
     super.initState();
-  }
-
-  Color _getTypeColor(String type) {
-    switch (type) {
-      case 'private lot':
-        return Color.fromARGB(255, 235, 210, 148);
-        break;
-      case 'public lot':
-        return Color.fromARGB(255, 125, 224, 224);
-        break;
-      case 'private garage':
-        return Colors.green;
-        break;
-      case 'everpark parking garage':
-        return Colors.yellow;
-        break;
-      case 'trinity lutheran (port gardner)':
-        return Color.fromARGB(255, 248, 209, 177);
-        break;
-      case 'snohomosish co. ':
-        return Colors.purple;
-        break;
-      default:
-        return Colors.black;
-        break;
-    }
   }
 
   void _showInfo(BuildContext context, int id) {
@@ -82,19 +55,14 @@ class _HomePageState extends State<HomePage> {
     final polygons = pl.map((l) => Polygon(
           polygonId: PolygonId(l.id.toString()),
           points: l.coords,
-          fillColor: l.colorLoc.withOpacity(0.1),
+          fillColor: l.colorLoc.withOpacity(0.5),
           strokeWidth: 2,
           strokeColor: Colors.grey[900],
           onTap: () {
-            print('Tapped!');
             _showInfo(context, l.id);
             },
           consumeTapEvents: true,
         ));
-
-    // FIXME get rid of these print statements
-    print('in homepage build');
-    print(polygons);
 
     return _isLoading
         ? Center(

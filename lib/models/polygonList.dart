@@ -17,7 +17,7 @@ class PolygonList with ChangeNotifier {
 
   Future<void> getData() async {
     print('in get Data');
-    final String url = 'http://172.21.27.142:5000/data/parkinglot';
+    final String url = 'http://10.156.2.88:5000/data/parkinglot';
 
     final response = await http.get(url);
     var data = jsonDecode(response.body);
@@ -39,7 +39,8 @@ class PolygonList with ChangeNotifier {
         type: location['type'],
         numSpots: location['num_spots'],
         id: location['id'],
-        timeRestriction: location['time_restriction']
+        timeRestriction: location['time_restriction'],
+        restrictions: location['restriction'],
         // polygonId: location['lot_name'],
       );
 

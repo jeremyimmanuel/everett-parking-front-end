@@ -10,15 +10,13 @@ class LocationInfo extends StatelessWidget {
 
   final int id;
 
-  
-
-  void _showDesc(BuildContext context) {
+  void _showDesc(BuildContext context, String content) {
     showDialog(
       context: context,
       builder: (ctx) {
         return AlertDialog(
           title: Text('About'),
-          content: Text('This is where the description will be'),
+          content: Text(content),
           actions: <Widget>[
             FlatButton(
               child: Text('Ok'),
@@ -33,8 +31,38 @@ class LocationInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Location loc = Provider.of<PolygonList>(context, listen: false).getLoc(id);
+    List<bool> showArr = loc.restrictionBoolArr;
 
-    // List<Widget> restrictions = [];
+    List<String> desc = [
+      'Permit required',
+      'Disabled parking',
+      'Bus zone',
+      'Loading zone',
+      'Senior center permit required',
+      'Official vehicle only',
+      'High School permit only',
+    ];
+    List<Icon> icons = [
+      Icon(Icons.assignment),
+      Icon(Icons.accessible),
+      Icon(Icons.directions_bus),
+      Icon(Icons.text_rotation_angledown),
+      Icon(Icons.person),
+      Icon(Icons.account_balance),
+      Icon(Icons.school),
+    ];
+    List<Widget> restrictions = [];
+
+    for (var i = 0; i < 8; i++) {
+      if (showArr[i]) {
+        restrictions.add(
+          IconButton(
+            icon: icons[i],
+            onPressed: () => _showDesc(context, desc[i]),
+          ),
+        );
+      }
+    }
     // loc.restricton
 
     return Container(
@@ -63,7 +91,7 @@ class LocationInfo extends StatelessWidget {
             height: 5,
           ),
           Text(
-            'Time limit (minutes): ${loc.timeRestriction}',
+            'Time limit (minutes): ${loc.timeRestriction == "0" ? 'No Time Limit' : loc.timeRestriction}',
             style: TextStyle(
               color: Colors.grey[200],
               fontSize: 25,
@@ -72,33 +100,7 @@ class LocationInfo extends StatelessWidget {
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.school),
-                onPressed: () => _showDesc(context),
-              ),
-              IconButton(
-                icon: Icon(Icons.directions_bus),
-                onPressed: () => _showDesc(context),
-              ),
-              IconButton(
-                icon: Icon(Icons.accessible),
-                onPressed: () => _showDesc(context),
-              ),
-              Badge(
-                badgeContent: Text('240'),
-                child: Container(),
-                badgeColor: Colors.grey[500],
-              ),
-              IconButton(
-                icon: Icon(Icons.assignment),
-                onPressed: () => _showDesc(context),
-              ),
-              IconButton(
-                icon: Icon(Icons.tram),
-                onPressed: () => _showDesc(context),
-              ),
-            ],
+            children: restrictions,
           ),
         ],
       ),
