@@ -1,4 +1,10 @@
-import 'package:badges/badges.dart';
+/// LocationInfo
+///
+/// This widget is shown when user taps on a highlighted 
+/// polygon on the map, which means its a valid parking 
+/// space/lot. The widget shows further details regarding 
+/// the parking space/lot
+
 import 'package:everett_parking/models/polygonList.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

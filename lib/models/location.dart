@@ -12,7 +12,6 @@ class Location {
     this.id,
     this.timeRestriction,
     this.restrictions,
-    // this.polygonId,
   });
 
   // A list of LatLng objects of the location's bounding points
@@ -31,6 +30,7 @@ class Location {
   // String representation of time restriction
   final String timeRestriction;
 
+  // The int representation of the known restrictions if any
   final int restrictions;
 
   // Get the String representation of the type of parking location
@@ -96,6 +96,8 @@ class Location {
     }
   }
 
+  // Get restriction boolean array based 
+  // on a bitwise operation of the restriction int
   List<bool> get restrictionBoolArr {
     List<bool> retVal = [false, false, false, false, false, false, false, false];
     for (var i = 0; i < 8; i++) {

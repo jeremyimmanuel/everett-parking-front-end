@@ -6,17 +6,26 @@ import 'package:http/http.dart' as http;
 
 import './location.dart';
 
+/// PolygonList
+/// 
+/// A class that holds all available parking
+/// spaces/lots
+/// TODO: rename PolygonList to LocationList
 class PolygonList with ChangeNotifier {
+  // The location list that holds the data
   List<Location> _poly = [];
 
+  // Public getter
   List<Location> get poly => [..._poly];
 
+  // Get specific Location object based on its id
   Location getLoc(int id) {  
     return _poly.firstWhere((l) => id == l.id);
   }
-
+  
+  // Fetches data form API
+  // TODO: should change url according to server's ip address
   Future<void> getData() async {
-    print('in get Data');
     final String url = 'http://10.156.2.88:5000/data/parkinglot';
 
     final response = await http.get(url);
