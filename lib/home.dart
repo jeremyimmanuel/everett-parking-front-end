@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
         ));
 
 
-
+    // FIXME get rid of these print statements
     print('in homepage build');
     print(polygons);
 

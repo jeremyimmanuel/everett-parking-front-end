@@ -32,9 +32,14 @@ def parse_KV_file(file, separator='=')
   generated_key_values
 end
 
+
+# source 'https://github.com/CocoaPods/Specs.git'
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
+
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
   
   # Flutter Pod
 
@@ -88,3 +93,5 @@ post_install do |installer|
     end
   end
 end
+
+

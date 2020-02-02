@@ -10,13 +10,19 @@ PODS:
   - GoogleMaps/Base (3.7.0)
   - GoogleMaps/Maps (3.7.0):
     - GoogleMaps/Base
+  - GooglePlaces (3.7.0):
+    - GoogleMaps/Base (= 3.7.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_plugin_android_lifecycle (from `.symlinks/plugins/flutter_plugin_android_lifecycle/ios`)
   - google_maps_flutter (from `.symlinks/plugins/google_maps_flutter/ios`)
+  - GoogleMaps
+  - GooglePlaces
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - GooglePlaces
   trunk:
     - GoogleMaps
 
@@ -33,7 +39,8 @@ SPEC CHECKSUMS:
   flutter_plugin_android_lifecycle: 47de533a02850f070f5696a623995e93eddcdb9b
   google_maps_flutter: d0dd62f5a7d39bae61057eb9f52dd778d99c7c6c
   GoogleMaps: 55da829c68aa931f3ae982b9e341cc2f3d89c587
+  GooglePlaces: a62077320f9d64239245af63aa1aa136393ebeb6
 
-PODFILE CHECKSUM: e45c292f618eeca3034958d33b444b6e1249b55f
+PODFILE CHECKSUM: e1b9afc762fe432df7d34e597c8c7b464c03e7b9
 
 COCOAPODS: 1.8.4

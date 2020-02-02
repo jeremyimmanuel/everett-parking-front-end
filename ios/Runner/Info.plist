@@ -42,6 +42,15 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>io.flutter.embedded_views_preview</key>
-	<true/>
+	<string>YES</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+    	<string>googlechromes</string>
+    	<string>comgooglemaps</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This application requires location services to work</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This application requires location services to work</string>
 </dict>
 </plist>
