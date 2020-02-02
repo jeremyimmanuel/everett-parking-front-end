@@ -12,35 +12,30 @@ class PolygonList with ChangeNotifier {
   List<Location> get poly => [..._poly];
 
   Future<void> getData() async {
+    print('in get Data');
     final String url = 'http://172.21.27.142:5000/data/parkinglot';
 
     final response = await http.get(url);
-    var data = jsonDecode(response.body) as Map<String, dynamic>;
-    // print()
-    for (var location in data['locations']) {
+    var data = jsonDecode(response.body);
+    print(data);
+    for (var location in data) {
       
       List<LatLng> coords = [];
       for (var m in location['coords']) {
         double lat = m['latitude'] as double;
         double lng = m['longitude'] as double;
-        print(lat);
-        print(lng);
-        print(m.runtimeType);
+        // print(lat);
+        // print(lng);
+        // print(m.runtimeType);
         coords.add(LatLng(lat, lng));
       }
-
-      // List<Map<String, double>> loadedCoords = location['coords'] as List<Map<String, double>>;
-      // List<LatLng> coords = loadedCoords.map((ll) => LatLng(
-      //       ll['latitude'],
-      //       ll['longitude'],
-      //     )).toList();
 
       Location l = Location(
         coords: coords,
         type: location['type'],
         numSpots: location['num_spots'],
         id: location['id'],
-        polygonId: location['polygon_id'],
+        // polygonId: location['lot_name'],
       );
 
       _poly.add(l);

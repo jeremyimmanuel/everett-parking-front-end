@@ -6,12 +6,12 @@ class Location {
     this.type,
     this.numSpots,
     this.id,
-    this.polygonId,
+    // this.polygonId,
   });
 
   final List<LatLng> coords;
   final String type;
   final int numSpots;
   final int id;
-  final String polygonId;
+  // final String polygonId;
 }
