@@ -34,7 +34,9 @@ For this hackathon, we set our goals to at least get an MVP, which has the follo
 A map is a crucial part in this app as it shows the locations of various places in Everett __including__ the parking spaces/lots. Therefore, we decided to use Google Maps SDK as our map of choice.
 
 ## Everett Parking API
-As we mentioned before, since the provided data is a static image, we made our own RESTful API to provide the app with meaningful data. Right now, the app only sends GET request; however, in a later section, we will discuss the future of the apps and potential improvement that involves using the API more heavily.
+As we mentioned before, since the provided data is a static image, we made our own RESTful API to provide the app with meaningful data. Right now, the app only sends GET request; however, in a later section, we will discuss the future of the apps and potential improvement that involves using the API more heavily. 
+
+__As of right now, the back-end is not working fully yet because the we haven't edited a dynamic path for the database file. Will remove this sentence when db is uploaded__
 
 ## Datapoints
 Since the resource that we have is a static image of the availale parking spots/lots, we made our own database-backed server and manually input it with the relevant coordinates. For the purpose of this hackathon, we took account of only 6 places as a proof of concept. Details about our server side (back-end) can be viewed in the back-end repo attached above.
