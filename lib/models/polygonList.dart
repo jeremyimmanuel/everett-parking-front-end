@@ -26,7 +26,8 @@ class PolygonList with ChangeNotifier {
   // Fetches data form API
   // TODO: should change url according to server's ip address
   Future<void> getData() async {
-    final String url = 'http://10.156.2.88:5000/data/parkinglot';
+    // Change the ipaddress to the ipaddress to the machine that's running the server
+    final String url = 'http://10.156.7.110:5000/data/parkinglot'; 
 
     final response = await http.get(url);
     var data = jsonDecode(response.body);

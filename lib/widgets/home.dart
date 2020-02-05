@@ -80,7 +80,8 @@ class _HomePageState extends State<HomePage> {
                   southwest: LatLng(47.969480, -122.220290)),
             ),
             polygons: polygons.toSet(),
-
+            myLocationButtonEnabled: true,
+            myLocationEnabled: true,
           );
   }
 }

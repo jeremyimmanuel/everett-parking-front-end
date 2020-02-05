@@ -38,6 +38,7 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
+  # added for Google Maps
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   
