@@ -42,7 +42,8 @@ Since the resource that we have is a static image of the availale parking spots/
 We managed to make an mvp that satisfy the goals mentioned above
 
 ## Screenshots
-![home page](homepage.PNG) ![location info 1](locInfo1.PNG) ![location info 2](locInfo2.PNG) ![desc](desc.PNG)
+<img src="./screenshots/homepage.PNG" width=30% height=30%> <img src="./screenshots/locInfo1.PNG" width=30% height=30%>
+<img src="./screenshots/locInfo2.PNG" width=30% height=30%> <img src="./screenshots/desc.PNG" width=30% height=30%>
 
 ## Short Demo
 Click this [link](https://youtu.be/dDfc4tU8x98) to see a short demo showing you how the app works in real life.
